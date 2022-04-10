@@ -1,5 +1,3 @@
-Exploring_Fairness_in_a_COMPAS_data_set
-
 # Exploring Fairness in a COMPAS dataset    
 
 ## Introduction
@@ -26,8 +24,8 @@ In this plot, we compared the different rates  for the african american and cauc
 Already we've seen that the classifier performance is not great for ethnic groups. We now examine how well the COMPAS score performs on metrics of fairness - independence, separation and sufficiency.
 
 ## TASK 1
-> ### 1.1 Independence - $R ⊥ A$
-* Independence is satisfied when the acceptance rate ($R = 1$) of all groups are equal
+> ### 1.1 Independence - R ⊥ A
+* Independence is satisfied when the acceptance rate (R = 1) of all groups are equal
 * Plot acceptance rates for all possible thresholds to see if it is possible to get a classifier based on COMPAS Scores that satisfies independence
 
 
@@ -36,7 +34,7 @@ Already we've seen that the classifier performance is not great for ethnic group
 
 ### Observations:
 
-We can see from the graph that for different groups based on the sensitive attribute, the 'acceptance rate' is different for all groups over all thresholds (except 0 and 1). Independence, defined as $P( R=1 | A=a ) = P( R=1 | A=b ) \hspace{0.5cm} \forall a,b \in A$, i.e. the same acceptance rate (ideally) for every ethnic group, is therefore not satisified. 
+We can see from the graph that for different groups based on the sensitive attribute, the 'acceptance rate' is different for all groups over all thresholds (except 0 and 1). Independence, defined as <img src="https://render.githubusercontent.com/render/math?math=P( R=1 | A=a ) = P( R=1 | A=b ) \hspace{0.5cm} \forall a,b \in A">, i.e. the same acceptance rate (ideally) for every ethnic group, is therefore not satisified. 
 
 Clearly the COMPAS score is not independent of the sensitive attribute of ethnic background and correlates with the outcome. The shape of the curve indicates the distribution of scores from 0 to 1. Looking at the different shapes of the curves it is clear that the acceptance rates are very different for the various ethnical groups. The african-american group, for instance, has the highest acceptance rates across all thresholds and their scores seem to be uniformly distributed in (0,1). This means that this group is more likely to be classified as recidivistic. In comparison, the Caucasian group have a distribution that is skewed towards lower COMPAS scores. A fair classifier, should enable everyone to have the same chances, so in this case to make it fairer different thresholds have to be established for the acceptance rates.
 
@@ -48,8 +46,8 @@ Independence holds only at thresholds 0 and 1 as these are the only thresholds t
 ![png](_resources/089d385041194a5999ed4e910217ca61.png)
 
 
-> ## 1.2 Separation - $R ⊥ A|Y$
-* Separation is satisfied when the false negative rates ( FNR -> $P(R=0|Y=1)$ ) and false positive rates ( FPR -> $P(R=1|Y=0)$ ) of all groups are equal
+> ## 1.2 Separation - R ⊥ A|Y
+* Separation is satisfied when the false negative rates ( FNR -> <img src="https://render.githubusercontent.com/render/math?math=P(R=0|Y=1)"> ) and false positive rates ( FPR -> <img src="https://render.githubusercontent.com/render/math?math=P(R=1|Y=0)"> ) of all groups are equal
 
 
 ![png](_resources/4f26382656bb4e3bb4738d9b2f8ec9c2.png)
@@ -62,8 +60,8 @@ In this plot we can clearly observe that the rates (FPR, FNR) are not equal for 
 ![png](_resources/640dd57cff6c4d77822a16cfcba5d411.png)
 
 
-> ## 1.3 Sufficiency - $Y⊥ A|R$
-* Sufficiency is satisfied when the positive predictive values ( PPV or precision -> $P(Y=1|R=1)$ ) or negative predictive values (NPV -> $P(Y=0|R=0)$ for all groups are equal
+> ## 1.3 Sufficiency - Y⊥ A|R
+* Sufficiency is satisfied when the positive predictive values ( PPV or precision -> <img src="https://render.githubusercontent.com/render/math?math=P(Y=1|R=1)"> ) or negative predictive values (NPV -> <img src="https://render.githubusercontent.com/render/math?math=P(Y=0|R=0)"> for all groups are equal
 
 
 ![png](_resources/c86fcadf703a41ed8c3eb1580777a500.png)
@@ -86,19 +84,7 @@ The previous section shows that the COMPAS score does not satisfy any of the fai
 
 In this task, we try to see if we can achieve any of the fairness criteria by using different thresholds for each group. 
 
-> ## 2.1 Aligning for Independence - $R ⊥ A$
-
-
-    C:\Users\Maheep\Anaconda3\lib\site-packages\ipykernel_launcher.py:14: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
-    
-
-
-
-
-    (-0.1, 1)
-
-
-
+> ## 2.1 Aligning for Independence - R ⊥ A
 
 ![png](_resources/b39f965c8f2f4eadbc3a7b48d4b506b8.png)
 
