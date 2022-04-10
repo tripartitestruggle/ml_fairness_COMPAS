@@ -10,11 +10,11 @@ In order to check for fairness in this analysis, we look at a data set of COMPAS
 We begin by simply examining the ROC curves for both these sensitive attributes. The ROC Curve is an evaluation metrics that is used to check and visualise the classification by showing the trade-off between sensitivity (TPR) and specificity (1-FPR). 
 
 
-![png](../_resources/c20d34f3f29b407c8354722b4af24797.png)
+![png](_resources/c20d34f3f29b407c8354722b4af24797.png)
 
 
 
-![png](../_resources/fcf567cfb1c74eb2abe81598696665d9.png)
+![png](_resources/fcf567cfb1c74eb2abe81598696665d9.png)
 
 
 ### Interpretation of ROC Curves by Attribute
@@ -31,7 +31,7 @@ Already we've seen that the classifier performance is not great for ethnic group
 * Plot acceptance rates for all possible thresholds to see if it is possible to get a classifier based on COMPAS Scores that satisfies independence
 
 
-![png](../_resources/f91bb6694d25403c87ba7e36f690c7c1.png)
+![png](_resources/f91bb6694d25403c87ba7e36f690c7c1.png)
 
 
 ### Observations:
@@ -45,32 +45,32 @@ Independence holds only at thresholds 0 and 1 as these are the only thresholds t
 
 
 
-![png](../_resources/089d385041194a5999ed4e910217ca61.png)
+![png](_resources/089d385041194a5999ed4e910217ca61.png)
 
 
 > ## 1.2 Separation - $R ⊥ A|Y$
 * Separation is satisfied when the false negative rates ( FNR -> $P(R=0|Y=1)$ ) and false positive rates ( FPR -> $P(R=1|Y=0)$ ) of all groups are equal
 
 
-![png](../_resources/4f26382656bb4e3bb4738d9b2f8ec9c2.png)
+![png](_resources/4f26382656bb4e3bb4738d9b2f8ec9c2.png)
 
 
 ### Observations
 In this plot we can clearly observe that the rates (FPR, FNR) are not equal for both false positives and false negatives. A false positive prediction is more costly, in these circumstances, because the freedom of an individual might directly be harmed by an inaccurate prediction. In this plot, we can observe that the African American group has the highest rate in false positive predictions and the lowest rate in false negative predictions, which again points to the unfairness of the model because the dataset is clearly disproportionately **falsely** targeting this group as more likely to re-offend in the future compared to other groups. When considering that the samples analysed by the model were unequally distributed and consisted of a high-number of African American samples. Ideally a separation-satisfying fair model should have equal false negatives and false positives rates for each group, but this imbalance shows the structural bias present in the american society being mirrored in these algorithms.
 
 
-![png](../_resources/640dd57cff6c4d77822a16cfcba5d411.png)
+![png](_resources/640dd57cff6c4d77822a16cfcba5d411.png)
 
 
 > ## 1.3 Sufficiency - $Y⊥ A|R$
 * Sufficiency is satisfied when the positive predictive values ( PPV or precision -> $P(Y=1|R=1)$ ) or negative predictive values (NPV -> $P(Y=0|R=0)$ for all groups are equal
 
 
-![png](../_resources/c86fcadf703a41ed8c3eb1580777a500.png)
+![png](_resources/c86fcadf703a41ed8c3eb1580777a500.png)
 
 
 
-![png](../_resources/409e0e6c9b0445eb9fa2033a00c80d06.png)
+![png](_resources/409e0e6c9b0445eb9fa2033a00c80d06.png)
 
 
 ### Observations
@@ -100,11 +100,11 @@ In this task, we try to see if we can achieve any of the fairness criteria by us
 
 
 
-![png](../_resources/b39f965c8f2f4eadbc3a7b48d4b506b8.png)
+![png](_resources/b39f965c8f2f4eadbc3a7b48d4b506b8.png)
 
 
 
-![png](../_resources/879c2424c9b94d9489b09926ce429316.png)
+![png](_resources/879c2424c9b94d9489b09926ce429316.png)
 
 
 ## Observations Task 2
@@ -247,11 +247,11 @@ The first plot shows that the dataset is better at predicting non-recidivism (0)
     
 
 
-![png](../_resources/fe683beed4544d75a49f424933119b52.png)
+![png](_resources/fe683beed4544d75a49f424933119b52.png)
 
 
 
-![png](../_resources/d4fe523af01145218ba8259257b07ed1.png)
+![png](_resources/d4fe523af01145218ba8259257b07ed1.png)
 
 
 ## Observations
